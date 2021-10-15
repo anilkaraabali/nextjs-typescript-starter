@@ -1,0 +1,18 @@
+html {
+  /* Keep base font-size to 10px, so it is easy to compute the REMs */
+  font-size: 62.5%;
+  height: 100%;
+
+  /* Prevent font scaling in landscape while allowing user zoom */
+  -webkit-text-size-adjust: 100%;
+
+  *,
+  *:before,
+  *:after {
+    border: none;
+    box-sizing: border-box;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+  }
+}

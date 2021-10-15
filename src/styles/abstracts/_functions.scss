@@ -1,0 +1,25 @@
+/* Color fetcher */
+@function getColor($key, $alpha: 1) {
+  @if map-has-key($colors, $key) {
+    @return rgba(map-get($colors, $key), $alpha);
+  }
+
+  @warn "Unknown `#{$key}` in $colors.";
+
+  @return null;
+}
+
+/* Z-index fetcher */
+@function z-index($key) {
+  @return map-get($z-index, $key);
+}
+
+/* Spacing multiplier */
+@function spacingm($multiplier: 1) {
+  @return calc(#{$spacing} * #{$multiplier});
+}
+
+/* Spacing divider */
+@function spacingd($divider) {
+  @return calc(#{$a} / #{$divider});
+}

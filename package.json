@@ -1,0 +1,93 @@
+{
+  "name": "next-typescript-starter",
+  "author": "Anil Karaabali <anilkaraabali@gmail.com>",
+  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anilkaraabali/next-typescript-starter"
+  },
+  "homepage": "https://github.com/anilkaraabali/next-typescript-starter",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "yarn eslint src --max-warnings=0 --ext .ts,.tsx && yarn stylelint 'src/**/*.scss'",
+    "lint-fix": "yarn eslint src --ext .ts,.tsx && yarn stylelint 'src/**/*.scss' --fix",
+    "prettier-check": "prettier --check",
+    "prettier-fix": "prettier --write",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:update": "jest -u",
+    "test:coverage": "jest --coverage=true",
+    "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
+    "storybook": "start-storybook -p 9009",
+    "build-storybook": "build-storybook -o ./storybook"
+  },
+  "dependencies": {
+    "classnames": "^2.3.1",
+    "intersection-observer": "^0.12.0",
+    "next": "11.1.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "sass": "^1.43.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@storybook/addon-a11y": "^6.3.12",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/react": "^6.3.12",
+    "@storybook/theming": "^6.3.12",
+    "@testing-library/dom": "^8.9.1",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.4.1",
+    "@types/react": "17.0.30",
+    "@typescript-eslint/eslint-plugin": "^4.28.2",
+    "@typescript-eslint/parser": "^4.28.2",
+    "autoprefixer": "^10.3.7",
+    "babel-jest": "^27.2.5",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.4.0",
+    "eslint": "^7.30.0",
+    "eslint-config-next": "11.1.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest-dom": "^3.9.2",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-testing-library": "^4.12.4",
+    "husky": "^7.0.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.2.5",
+    "jest-module-name-mapper": "^0.1.5",
+    "lint-staged": "^11.2.3",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-rtl": "^1.7.3",
+    "prettier": "^2.4.1",
+    "react-test-renderer": "^17.0.2",
+    "sass-loader": "^12.2.0",
+    "sass-resources-loader": "^2.2.4",
+    "style-loader": "^3.3.0",
+    "stylelint": "^13.13.1",
+    "stylelint-declaration-strict-value": "^1.7.12",
+    "stylelint-order": "^4.1.0",
+    "tsconfig-paths-webpack-plugin": "^3.5.1",
+    "typescript": "4.4.4"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,scss,md}": "prettier --check",
+    "*.{js,ts,tsx}": "eslint --max-warnings=0",
+    "src/**/*.scss": "stylelint --quiet",
+    "src/**/*spec.{js,ts,tsx}": "yarn test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

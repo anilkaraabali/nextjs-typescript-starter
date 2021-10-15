@@ -1,0 +1,19 @@
+.container {
+  align-items: center;
+  border-top: 1px solid getColor(grey3);
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  width: 100%;
+}
+
+.container a {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.logo {
+  max-width: 11.5rem;
+}

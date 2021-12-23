@@ -1,20 +1,20 @@
-/**
- * @jest-environment jsdom
- */
-
 import { render, screen } from '@testing-library/react';
 
-import { FooterComponent } from '../component';
+import { Footer } from '..';
 
-describe('FooterComponent', () => {
-  it('should render without throwing any errors', () => {
-    const { container } = render(<FooterComponent />);
+describe('Footer', () => {
+  it('should render without fail', () => {
+    const { container } = render(
+      <Footer>
+        <div>Content</div>
+      </Footer>
+    );
 
     expect(container).toMatchSnapshot();
   });
 
   it('should link has value', () => {
-    render(<FooterComponent />);
+    render(<Footer />);
 
     const logo = screen.getByRole('link', { name: /vercel logotype/i });
 

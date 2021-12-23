@@ -36,7 +36,7 @@ module.exports = {
     'function-name-case': [
       'lower',
       {
-        ignoreFunctions: ['/^getColor/'],
+        ignoreFunctions: ['spacing', 'fontWeight', 'shadow', 'zIndex', 'color'],
       },
     ],
     'length-zero-no-unit': true,
@@ -58,22 +58,23 @@ module.exports = {
         '/padding(-top|-left|-right|-bottom)/',
         '/margin(-top|-left|-right|-bottom)/',
         'z-index',
-        'font-size',
-        'font-weight',
+        // prettier-ignore
+        '/font(-\w+)*/',
         'fill',
         'stroke',
-        'border-color',
+        '/^(top|left|right|bottom)$/',
       ],
       {
-        expandShorthand: true,
         ignoreKeywords: {
-          // default, for all
-          '': ['currentColor', 'inherit', 'transparent'],
+          '': ['currentColor', 'inherit', 'transparent'], // default, for all
           '/margin(-top|-left|-right|-bottom)/': ['0', 'auto'],
           '/padding(-top|-left|-right|-bottom)/': ['0'],
-          'font-size': ['62.5%'],
+          '/^(top|left|right|bottom)$/': ['0', 'auto', '50%', '100%'],
         },
       },
     ],
+
+    // prettier-ignore
+    'selector-class-pattern': '^\.[a-z]+(--?[a-z]+)*$',
   },
 };

@@ -1,0 +1,23 @@
+/* stylelint-disable scale-unlimited/declaration-strict-value */
+
+body {
+  background: color(gray-200);
+  color: color(dark);
+  fill: color(dark);
+
+  /* Keep base font-size to 10px, so it is easy to compute the REMs */
+  font: text(base) / 1.6 var(--font-family-default);
+
+  /* Support for IE. */
+  font-feature-settings: 'liga' 0;
+
+  /* To provide the contextual adjustment of inter-glyph spacing. */
+  font-kerning: normal;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+}

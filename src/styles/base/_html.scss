@@ -1,18 +1,13 @@
+/* stylelint-disable scale-unlimited/declaration-strict-value */
+
 html {
   /* Keep base font-size to 10px, so it is easy to compute the REMs */
   font-size: 62.5%;
   height: 100%;
 
+  /* Prevent any object from being highlighted upon touch event */
+  -webkit-tap-highlight-color: transparent;
+
   /* Prevent font scaling in landscape while allowing user zoom */
   -webkit-text-size-adjust: 100%;
-
-  *,
-  *:before,
-  *:after {
-    border: none;
-    box-sizing: border-box;
-    margin: 0;
-    outline: 0;
-    padding: 0;
-  }
 }

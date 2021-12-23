@@ -1,25 +1,23 @@
-/* Color fetcher */
-@function getColor($key, $alpha: 1) {
-  @if map-has-key($colors, $key) {
-    @return rgba(map-get($colors, $key), $alpha);
-  }
-
-  @warn "Unknown `#{$key}` in $colors.";
-
-  @return null;
+@function spacing($multiplier: 1) {
+  @return calc(var(--spacing) * #{$multiplier});
 }
 
-/* Z-index fetcher */
-@function z-index($key) {
-  @return map-get($z-index, $key);
+@function color($value) {
+  @return var(--color-#{$value});
 }
 
-/* Spacing multiplier */
-@function spacingm($multiplier: 1) {
-  @return calc(#{$spacing} * #{$multiplier});
+@function fontWeight($value) {
+  @return var(--font-weight-#{$value});
 }
 
-/* Spacing divider */
-@function spacingd($divider) {
-  @return calc(#{$a} / #{$divider});
+@function zIndex($value) {
+  @return var(--z-index-#{$value});
+}
+
+@function shadow($value) {
+  @return var(--shadow-#{$value});
+}
+
+@function text($value) {
+  @return var(--font-size-#{$value});
 }

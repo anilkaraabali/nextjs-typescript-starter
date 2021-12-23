@@ -1,0 +1,12 @@
+.container {
+  padding: 0 spacing();
+}
+
+.title a {
+  color: color(primary);
+}
+
+.title {
+  font-size: text(9xl);
+  text-align: center;
+}

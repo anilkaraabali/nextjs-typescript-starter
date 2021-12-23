@@ -1,26 +1,26 @@
 import 'intersection-observer';
-import 'styles/globals.scss';
-import { LayoutComponent } from 'layout/component';
+import 'styles/index.scss';
 import type { AppContext, AppProps, NextWebVitalsMetric } from 'next/app';
 import App from 'next/app';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
-import { LocaleEnum } from 'enums/locale/enum';
-import { LocaleService } from 'services/locale/service';
+import { LayoutWrapper } from 'components/LayoutWrapper';
+import { LocaleEnum } from 'enums/locale';
+import { LocaleService } from 'services/locale';
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   const { locale } = useRouter();
 
   useEffect(() => {
     LocaleService.setLocale(locale as LocaleEnum);
-    document.documentElement.dir = locale === LocaleEnum.ar ? 'rtl' : 'ltr';
+    document.documentElement.dir = locale === LocaleEnum.AR ? 'rtl' : 'ltr';
   }, [locale]);
 
   return (
-    <LayoutComponent>
+    <LayoutWrapper>
       <Component {...pageProps} />
-    </LayoutComponent>
+    </LayoutWrapper>
   );
 };
 

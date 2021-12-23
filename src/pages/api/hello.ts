@@ -6,5 +6,5 @@ type Data = {
 };
 
 export default function handler(_: NextApiRequest, res: NextApiResponse<Data>): void {
-  res.status(200).json({ name: 'John Doe' });
+  res.status(200).json({ name: 'Welcome to Typescript Nextjs Starter' });
 }
